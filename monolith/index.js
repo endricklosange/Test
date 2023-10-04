@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(express.static(staticPath))
 app.use((req,res,next) => {
-    res.data = {}
+    res.data = {session: req.session}
     return next()
 })
 
